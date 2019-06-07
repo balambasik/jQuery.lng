@@ -24,7 +24,6 @@ minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea co
 ```js
 
 // use object translations
-
 var display_lang = "it";
 
 var translations = [{
