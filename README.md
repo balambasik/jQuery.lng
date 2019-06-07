@@ -1,19 +1,19 @@
 # jQuery.lng
 Easy jQuery localization plugin
 
-##{lng: Translate string}
 
+**{lng: String}**
 
 ```html
 <div>
 
-<span>{lng: Hello}</span>
-<button>{lng: How are you}</button>
-<a htrf="#">{lng: Today is beautiful weather}</a>
+<span> {lng: Hello} </span>
+<button> {lng: How are you} </button>
+<a htrf="#"> {lng: Today is beautiful weather} </a>
 
 <p>
-Lorem ipsum dolor sit amet,  {lng: Today is beautiful weather}  consectetur 
-adipiscing elit,  {lng: How are your}  Ut enim ad
+Lorem ipsum dolor sit amet,    {lng: Today is beautiful weather}    consectetur 
+adipiscing elit,   {lng: How are your}    Ut enim ad
 minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 </p>
 
