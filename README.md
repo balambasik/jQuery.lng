@@ -45,7 +45,7 @@ $.lng(display_lang, translations);
  $.lng("it", "/translate.json");
 ```
 
-**translate.json
+**translate.json**
 
 ```json
 [{
