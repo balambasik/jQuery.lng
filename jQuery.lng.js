@@ -14,7 +14,7 @@
 
     $.lng = function(lang, langs_arr) {
 
-       // set config
+        // set config
         if (typeof lang === "string" && typeof langs_arr === "object") {
             CUR_LANG = lang;
             TRANSL_ARR = $.merge(langs_arr, TRANSL_ARR);
@@ -30,7 +30,7 @@
             });
         }
 
-//------------------------------------------------------------------------
+        //------------------------------------------------------------------------
 
         function translate(string) {
 
@@ -55,34 +55,36 @@
             return string;
         }
 
-//------------------------------------------------------------------------
+        //------------------------------------------------------------------------
 
         function translateHtml() {
 
             $("body").find('*').each(function() {
 
-                if (/{lng:[\s\S]*?}/m.test($(this).text())) {
+                if (/{lng:.*?}/.test($(this).html())) {
 
                     DEFAULT.push({
                         el: $(this),
                         text: $(this).text()
                     });
 
-                    var replace_text = $(this).text().replace(/{lng:[\s\S]*?}/gim, function(str) {
+                    var replace_text = $(this).html().replace(/{lng:.*?}/gi, function(str) {
 
                         var clean_str = str.trim().replace("{lng:", "").replace("}", "").trim();
 
                         return translate(clean_str);
                     });
 
-                    $(this).text(replace_text);
+                    $(this).html(replace_text);
                 }
 
             });
 
+            console.log(DEFAULT);
+
         }
 
-//------------------------------------------------------------------------
+        //------------------------------------------------------------------------
 
         function rollback() {
             $.each(DEFAULT, function(i, item) {
@@ -90,13 +92,13 @@
             });
         }
 
-//------------------------------------------------------------------------
+        //------------------------------------------------------------------------
 
         $(document).ready(function() {
             translateHtml();
         });
 
-//------------------------------------------------------------------------
+        //------------------------------------------------------------------------
 
         $.lng.e = function(string) {
             return translate(string);
@@ -114,6 +116,10 @@
             CUR_LANG = lang;
             rollback();
             translateHtml();
+        };
+        
+        $.lng.rollback = function() {
+            rollback();
         };
 
     };
