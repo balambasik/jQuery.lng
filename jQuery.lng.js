@@ -61,17 +61,15 @@
 
             $("body").find('*').each(function() {
 
-                if (/{lng:.*?}/.test($(this).html())) {
+                if (/{lng:.*?}/.test($(this).text())) {
 
                     DEFAULT.push({
                         el: $(this),
-                        text: $(this).text()
+                        text: $(this).html()
                     });
 
                     var replace_text = $(this).html().replace(/{lng:.*?}/gi, function(str) {
-
                         var clean_str = str.trim().replace("{lng:", "").replace("}", "").trim();
-
                         return translate(clean_str);
                     });
 
@@ -80,7 +78,6 @@
 
             });
 
-            console.log(DEFAULT);
 
         }
 
@@ -88,7 +85,7 @@
 
         function rollback() {
             $.each(DEFAULT, function(i, item) {
-                item.el.text(item.text);
+                item.el.html(item.text);
             });
         }
 
