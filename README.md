@@ -1,6 +1,9 @@
 # jQuery.lng
 Easy jQuery localization plugin
 
+##{lng: Translate string}
+
+
 ```html
 <div>
 
