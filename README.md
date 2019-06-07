@@ -22,6 +22,9 @@ minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea co
 
 
 ```js
+
+// use object translations
+
 var display_lang = "it";
 
 var translations = [{
@@ -33,7 +36,31 @@ var translations = [{
 }, {
     "en": "Today is beautiful weather",
     "it": "Oggi è bel tempo"
-}]
+}];
 
 $.lng(display_lang, translations);
+
+
+// use json file
+ $.lng("it", "/translate.json");
 ```
+
+**translate.json
+
+```json
+[{
+    "en": "Hello",
+    "it": "Ciao"
+}, {
+    "en": "How are you",
+    "it": "Come stai"
+}, {
+    "en": "Today is beautiful weather",
+    "it": "Oggi è bel tempo"
+}]
+```
+
+
+
+
+
