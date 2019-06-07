@@ -21,9 +21,8 @@ minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea co
 ```
 
 
+**use object translations**
 ```js
-
-// use object translations
 var display_lang = "it";
 
 var translations = [{
@@ -38,9 +37,10 @@ var translations = [{
 }];
 
 $.lng(display_lang, translations);
+```
 
-
-// use json file
+**use json file translations**
+```js
  $.lng("it", "/translate.json");
 ```
 
@@ -59,7 +59,18 @@ $.lng(display_lang, translations);
 }]
 ```
 
+**change lang**
+```js
+ $.lng.change("fr");
+```
 
+**vars**
+```js
+
+var translate = $.lng.e("Today is beautiful weather");
+// translate = Oggi è bel tempo 
+
+```
 
 
 
